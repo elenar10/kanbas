@@ -37,7 +37,7 @@ function TaskList(props) {
                     {props.remove}
                 </div>
                 {addTask ? <Form></Form> : ' '}
-                {task.map((e) => <Prueba key={e.id} results={e}></Prueba> )}
+                {task.map((e) => props.title === e.estado ?<Prueba key={e.id} results={e}></Prueba>:'')}
             </div>
         </Fragment>
     )

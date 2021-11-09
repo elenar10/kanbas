@@ -22,11 +22,12 @@ function Form() {
             id : counter,
             tarea: e.target.task.value,
             fecha: fecha,
+            estado:'Done'
         }
         localStorage.setItem(`task${counter}`, JSON.stringify(objectTask));
         setTitle(e.target.task.value);
         counter++;
-        localStorage.setItem('counter', counter);
+        localStorage.setItem('counter', counter)
     }
     return (
         <Fragment>
