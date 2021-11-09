@@ -1,5 +1,25 @@
-* {
-  margin: 0;
-  padding: 0;
+/* GENERAL RESETS */
+*{
+  margin: 0%;
+  padding: 0%;
   box-sizing: border-box;
+}
+/* BODY */
+body{
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color
+  Emoji,Segoe UI Emoji;
+}
+
+/* MAIN CONTAINER - TASKS CONTAINER */
+
+.main__container{
+  min-height: 42rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fff;
+  gap: 0.5rem;
+  padding: 0.8rem;
 }
