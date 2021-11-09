@@ -23,7 +23,7 @@ function TaskList(props) {
                 arr.push(JSON.parse(localStorage.getItem(`task${i}`)))
         }
        setTask(arr)
-    }, [])
+    }, [counter])
 
     return (
         <Fragment>
