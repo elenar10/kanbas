@@ -5,6 +5,8 @@ import React from 'react';
 function Form() {
     const [btnEnabled, setBtnEnabled] = useState(false);
     const [title, setTitle] = useState('');
+    let counter = localStorage.getItem('counter') ?? 1;
+
     const comprobationInput = (e) => {
         if (e.target.value === '') {
             setBtnEnabled(false);
@@ -14,7 +16,17 @@ function Form() {
     }
     const sendTarea = (e) => {
         e.preventDefault();
+        const day = new Date();
+        const fecha = `${day.getDate()}/${day.getMonth() + 1 }/${day.getFullYear()} ${day.getHours()}:${day.getMinutes()}:${day.getSeconds()}`;
+        const objectTask = {
+            id : counter,
+            tarea: e.target.task.value,
+            fecha: fecha,
+        }
+        localStorage.setItem(`task${counter}`, JSON.stringify(objectTask));
         setTitle(e.target.task.value);
+        counter++;
+        localStorage.setItem('counter', counter);
     }
     return (
         <Fragment>

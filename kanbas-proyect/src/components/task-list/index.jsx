@@ -1,11 +1,14 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import './style.css'
 import Form from '../form'
-
-
+import Prueba from "./prueba";
 
 function TaskList(props) {
     const [addTask, setAddTask] = useState(false);
+    const [task, setTask] = useState([]);
+
+
+    let counter = localStorage.getItem('counter') ?? 1;
     function openForm() {
         if (addTask === true) {
             setAddTask(false)
@@ -13,6 +16,15 @@ function TaskList(props) {
             setAddTask(true)
         }
     }
+
+    useEffect (() => {
+        let arr = [];
+        for (let i =1; i<counter;i++){
+                arr.push(JSON.parse(localStorage.getItem(`task${i}`)))
+        }
+       setTask(arr)
+    }, [])
+
     return (
         <Fragment>
             <div className="taskList__container">
@@ -25,6 +37,7 @@ function TaskList(props) {
                     {props.remove}
                 </div>
                 {addTask ? <Form></Form> : ' '}
+                {task.map((e) => <Prueba key={e.id} results={e}></Prueba> )}
             </div>
         </Fragment>
     )
