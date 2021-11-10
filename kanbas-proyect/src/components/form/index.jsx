@@ -1,6 +1,7 @@
 import './style.css'
 import { Fragment, useState } from 'react'
 import React from 'react';
+import TaskCard from '../taskCard';
 
 function Form() {
     const [btnEnabled, setBtnEnabled] = useState(false);
@@ -27,7 +28,7 @@ function Form() {
                         <button className='btn btn_cancelar' type='reset' onClick={() => setBtnEnabled(false)}>Cancel</button>
                     </div>
                 </form>
-                : <h1>nueva tarea</h1>}
+                : <TaskCard title={title} date="dia" hour="hora"></TaskCard>}
         </Fragment>
     )
 }
