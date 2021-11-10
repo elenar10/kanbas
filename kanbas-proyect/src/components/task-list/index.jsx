@@ -6,6 +6,7 @@ import Prueba from "./prueba";
 function TaskList(props) {
     const [addTask, setAddTask] = useState(false);
     const [task, setTask] = useState([]);
+    const [draw, setDraw] = useState(true);
 
 
     let counter = localStorage.getItem('counter') ?? 1;
@@ -17,10 +18,17 @@ function TaskList(props) {
         }
     }
 
+    const drawTaskList = () => {
+        draw ? setDraw(false) : setDraw(true);
+        addTask ? setAddTask(false) : setAddTask(true)
+    }
+
     useEffect (() => {
         let arr = [];
         for (let i =1; i<counter;i++){
-                arr.push(JSON.parse(localStorage.getItem(`task${i}`)))
+                if (JSON.parse(localStorage.getItem(`task${i}`)!== null)){
+                    arr.push(JSON.parse(localStorage.getItem(`task${i}`)))
+                }
         }
        setTask(arr)
     }, [counter])
@@ -36,7 +44,7 @@ function TaskList(props) {
                     <button className="button__add" onClick={openForm}>+</button>
                     {props.remove}
                 </div>
-                {addTask ? <Form></Form> : ' '}
+                {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title}></Form> : ' '}
                 {task.map((e) => props.title === e.estado ?<Prueba key={e.id} results={e}></Prueba>:'')}
             </div>
         </Fragment>

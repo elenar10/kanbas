@@ -3,10 +3,9 @@ import { Fragment, useState } from 'react'
 import React from 'react';
 import Prueba from '../task-list/prueba';
 
-function Form() {
+function Form(props) {
     const [btnEnabled, setBtnEnabled] = useState(false);
     const [title, setTitle] = useState('');
-    const [newObj, setNewObj] = useState({});
     let counter = localStorage.getItem('counter') ?? 1;
 
     const comprobationInput = (e) => {
@@ -24,13 +23,13 @@ function Form() {
             id : counter,
             tarea: e.target.task.value,
             fecha: fecha,
-            estado:'Done'
+            estado: props.titleTask
         }
         localStorage.setItem(`task${counter}`, JSON.stringify(objectTask));
         setTitle(e.target.task.value);
         counter++;
         localStorage.setItem('counter', counter);
-        setNewObj(objectTask);
+        props.onUpdateTaskList();
     }
     return (
         <Fragment>
@@ -43,7 +42,8 @@ function Form() {
                         <button className='btn btn_cancelar' type='reset' onClick={() => setBtnEnabled(false)}>Cancel</button>
                     </div>
                 </form>
-                : <Prueba  results={newObj}></Prueba>}
+                // : <Prueba  results={newObj}></Prueba>}
+                :''}
         </Fragment>
     )
 }
