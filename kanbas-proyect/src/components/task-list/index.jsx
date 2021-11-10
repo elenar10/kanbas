@@ -11,12 +11,8 @@ function TaskList(props) {
 
     let counter = localStorage.getItem('counter') ?? 1;
     function openForm() {
-        if (addTask === true) {
-            setAddTask(false)
-        } else {
-            setAddTask(true)
+        addTask === true ? setAddTask(false):setAddTask(true)
         }
-    }
 
     const drawTaskList = () => {
         draw ? setDraw(false) : setDraw(true);
