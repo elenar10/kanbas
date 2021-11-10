@@ -18,3 +18,9 @@
       font-size: 0.7rem;
       column-gap: 25rem;
     }
+  .logo-version__wrapper{
+    width: 50%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
