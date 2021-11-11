@@ -8,17 +8,22 @@ function TaskList(props) {
     const [task, setTask] = useState([]);
     const [draw, setDraw] = useState(true);
 
+//inicializo el contador al valor de la local Storage, si no hay valor todavía, lo inicializo en 1
+    let counter = localStorage.getItem('counter') ?? 1;  
 
-    let counter = localStorage.getItem('counter') ?? 1;
+// función que cambia una variable de estado, para que al hacer click en el'+' para abrir el formulario, se actualice, haga render otra vez, y abra el formulario
     function openForm() {
         addTask === true ? setAddTask(false):setAddTask(true)
         }
 
+
+// funcion que le paso al formulario como props, para que cuando ingreso una nueva tarea, el form llame a está función, y se modifique la varible de estado para volver a pintar, pero ahora con la nueva tarea guardada
     const drawTaskList = () => {
         draw ? setDraw(false) : setDraw(true);
         addTask ? setAddTask(false) : setAddTask(true)
     }
 
+// está función sería como el componentDidMount que usabamos en la clase, para que al abrir el programa, recoja las tareas de la localStorage y pinte las cards
     useEffect (() => {
         let arr = [];
         for (let i =1; i<counter;i++){
