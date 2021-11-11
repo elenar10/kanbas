@@ -1,7 +1,6 @@
 import './style.css'
 import { Fragment, useState } from 'react'
 import React from 'react';
-import Prueba from '../task-list/prueba';
 
 function Form(props) {
     const [btnEnabled, setBtnEnabled] = useState(false);
@@ -23,7 +22,8 @@ function Form(props) {
             id : counter,
             tarea: e.target.task.value,
             fecha: fecha,
-            estado: props.titleTask
+            estado: props.titleTask,
+            estadoIcono : props.titleTask === 'Done' ? 'Done': 'Pending'
         }
         localStorage.setItem(`task${counter}`, JSON.stringify(objectTask));
         setTitle(e.target.task.value);
