@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { DateContext } from ".";
+import { DateContext } from "./";
 
 function DateProvider({ value, children }) {
-    const [date, setDate] = useState(value); // creo variable de estado con el valor por defecto el value
+    const [date, setDate] = useState(value); 
     return (
         <DateContext.Provider value={[date, setDate]}>
             {children}

@@ -1,13 +1,21 @@
 import './style.css'
+import { useContext } from 'react';
+import { DateContext } from '../contexto';
 
 function TaskCard(props) {
 
+    const [date, setDate] = useContext(DateContext);
     // recuperamos del localStorage el objeto por su id
    let resultsObjet= localStorage.getItem(`task${props.results.id}`);
    let estadoIcons= JSON.parse(resultsObjet)
+   
     function handleClickDelete(){
         localStorage.removeItem(`task${props.results.id}`)
         props.onUpdateTaskList();
+        const day = new Date();
+        const lastDate = `Updated on ${day.getDate()}/${day.getMonth() + 1} ${day.getSeconds()}`
+        setDate(lastDate)
+        localStorage.setItem('lastUpdate', lastDate);
 
     }
     return (

@@ -1,25 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import './style.css'
+import { DateContext } from '../contexto';
 
-function SearcherBar(props) {
-    const [date, setDate] = useState('');
-    const day = new Date();
-    setDate(`Updated on ${day.getDate()}/${day.getMonth() + 1}/ ${day.getSeconds()}`);
-
-    // const [load, setLoad] = useState(true);
-    // useEffect(() => {
-    //     const day = new Date();
-    //     const fecha = `Updated on ${day.getDate()}/${day.getMonth() + 1}/ ${day.getSeconds()}`;
-
-    // }, [load])
-
-
+function SearcherBar() {
+    const [date, setDate] = useContext(DateContext);
+    const lastUpdate = localStorage.getItem('lastUpdate') ?? 'no ha realizado tarea  todavía';
+    setDate(lastUpdate);
 
     return (
         <div className="sub--header__container">
             <div className="version--updated__wrapper">
                 <p>Version 1.0.0</p>
-                <p>{date}</p>
+                <p>{date ?? lastUpdate}</p>
 
             </div>
             <div className="search__container">
