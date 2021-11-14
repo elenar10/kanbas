@@ -1,11 +1,12 @@
 import './style.css'
-import { Fragment, useState } from 'react'
+import { Fragment, useContext, useState } from 'react'
 import React from 'react';
+import DateContext from '../contexto';
 
 function Form(props) {
     const [btnEnabled, setBtnEnabled] = useState(false);
     let counter = localStorage.getItem('counter') ?? 1;
-
+    const [setDate] = useContext('')
     // comprueba si el input tiene algo escrito, si es así, la variable de estado 'btnEnabled' se pone true, si no tiene nada se pone 'false'. Esto es para que en función de ella, el botón quede con opacidad o no.
     const comprobationInput = (e) => {
         if (e.target.value === '') {
@@ -31,6 +32,9 @@ function Form(props) {
         counter++;
         localStorage.setItem('counter', counter);
         props.onUpdateTaskList();
+
+        setDate(`Updated on ${day.getDate()}/${day.getMonth() + 1}/ ${day.getSeconds()}`);
+
     }
     return (
         <Fragment>

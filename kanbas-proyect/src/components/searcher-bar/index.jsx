@@ -1,29 +1,31 @@
+import { useEffect, useState } from 'react';
 import './style.css'
+
 function SearcherBar(props) {
-    // filterCities(){
-    //     // filtra mi array original con los valores actuales de los filtros (el valor del input y el valor de el range)
-    //     const filteredCities = this.originalCityList.filter(c => c.population >= this.currentPopulationValue
-    //         && this.normalizeCity(c.city).includes(this.currentSearchValue));
-    //     this.setState({
-    //         cityList: filteredCities
-    //     });
-    // }
-    // filterByName(e){
-    //     this.currentSearchValue = this.normalizeCity(e.target.value);
-    //     this.filterCities();
-    // }
+    const [date, setDate] = useState('');
+    const day = new Date();
+    setDate(`Updated on ${day.getDate()}/${day.getMonth() + 1}/ ${day.getSeconds()}`);
+
+    // const [load, setLoad] = useState(true);
+    // useEffect(() => {
+    //     const day = new Date();
+    //     const fecha = `Updated on ${day.getDate()}/${day.getMonth() + 1}/ ${day.getSeconds()}`;
+
+    // }, [load])
+
+
+
     return (
         <div className="sub--header__container">
             <div className="version--updated__wrapper">
                 <p>Version 1.0.0</p>
-                <p>AQUI VA ULTIMO UPDATED!</p>
+                <p>{date}</p>
 
             </div>
             <div className="search__container">
                 <label htmlFor="search"></label>
                 <input
                     id="search"
-                    // onChange={e => filterByName(e)}
                     name="search"
                     type="text"
                     placeholder=" Encuentra una tarea"

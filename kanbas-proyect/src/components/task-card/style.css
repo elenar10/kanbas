@@ -1,0 +1,35 @@
+.cardTasK_contenedor{
+    background-color: white;
+    border: rgba(27,31,35,0.15) solid 1px;
+    border-radius: 0.5em;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+
+}
+.cardTask_tilte-Icons{
+    display: flex;
+    justify-content: space-between;
+}
+.iconDelete {
+    font-family: 'Apple Color Emoji';
+    font-size: 1.5em;
+    color: black;
+}
+.task__name{
+    color: #0366D6;
+}
+.iconInprogress{
+    font-family: 'Material Icons';
+    font-size: 1.5em;
+    color: #22863A;
+}
+.iconChecked{
+    font-family: 'Material Icons';
+    font-size:1.5em;
+    color: #CB2431;
+}
+.task__date{
+    display: flex;
+    justify-content: flex-start;
+ } 
