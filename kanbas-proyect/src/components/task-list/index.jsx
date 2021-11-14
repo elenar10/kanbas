@@ -1,12 +1,14 @@
 import React, { Fragment, useEffect, useState } from "react";
 import './style.css'
 import Form from '../form'
-import Prueba from "./prueba";
+import TaskCard from "../task-card/task-card";
+
 
 function TaskList(props) {
-    const [addTask, setAddTask] = useState(false);
-    const [task, setTask] = useState([]);
-    const [draw, setDraw] = useState(true);
+    const [addTask, setAddTask] = useState(false); //indica si el form se pinta o no
+    const [task, setTask] = useState([]);     //Es el array con las tareas de la localStorage
+    const [draw, setDraw] = useState(true);     // para renderizar de nuevo cuando los hijos tengan cambios
+
 
     //inicializo el contador al valor de la local Storage, si no hay valor todavía, lo inicializo en 1
     let counter = localStorage.getItem('counter') ?? 1;
@@ -29,41 +31,28 @@ function TaskList(props) {
         for (let i = 1; i < counter; i++) {
             if (JSON.parse(localStorage.getItem(`task${i}`) !== null)) {
                 arr.push(JSON.parse(localStorage.getItem(`task${i}`)))
-                console.log(arr)
             }
         }
         setTask(arr)
-    }, [counter])
 
-    function toClearAll() {
-        for (let i = 1; i < counter; i++) {
-            const dataStorage = JSON.parse(localStorage.getItem(`task${i}`))
-            console.log(dataStorage)
-        }
-    }
-
+    }, [counter, draw])
 
     return (
         <Fragment>
             <div className="taskList__container">
                 <div className="taskList__header">
                     <div className="title-counter__wrapper">
-                        <div className="counter">12</div>
+                        <div className="counter">{task.filter(e => props.title === e.estado).length}</div>
                         <h3 className="task__title">{props.title}</h3>
                     </div>
-                    <div className="remove__container">
-                        <button className="button__add" onClick={openForm}>+</button>
-                        <button
-                            onClick={toClearAll}
-                            className="btn_clearAll">{props.remove}</button>
-                    </div>
+                    <button className="button__add" onClick={openForm}>+</button>
+                    {props.remove}
                 </div>
                 {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title}></Form> : ' '}
-                {task.map((e) => props.title === e.estado ? <Prueba key={e.id} results={e}></Prueba> : '')}
+                {task.map((e) => props.title === e.estado ? <TaskCard key={e.id} results={e} onUpdateTaskList={() => draw ? setDraw(false) : setDraw(true)}></TaskCard> : '')}
             </div>
         </Fragment>
     )
 }
 
 export default TaskList;
-
