@@ -1,0 +1,28 @@
+.sub--header__container{
+    width: 100vw;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.version--updated__wrapper{
+    width: 50%;
+    font-size: 0.8rem;
+}
+.search__container{
+    width: 50%;
+    height: 100%;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.searchInput{
+    width: 60%;
+    border-radius: 0.3rem;
+    border: lightgray 0.6px solid;
+}
