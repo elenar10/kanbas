@@ -30,7 +30,7 @@ function TaskList(props) {
         for (let i = 1; i < counter; i++) {
             let obj = JSON.parse(localStorage.getItem(`task${i}`));
             if (obj !== null) {
-                if (typeof filterWord ===  'object' || obj.tarea.toLowerCase().includes(filterWord.toLowerCase()))
+                if (typeof filterWord ===  'object' || filterWord.length<3 || obj.tarea.toLowerCase().includes(filterWord.toLowerCase()))
                 arr.push(obj)
             }
         }
@@ -69,7 +69,7 @@ function TaskList(props) {
                     </div>
                 </div>
                 
-                    {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title}></Form> : ' '}
+                    {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title} onCancel={drawTaskList}></Form> : ' '}
                     {task.map((e) => props.title === e.estado ? <TaskCard key={e.id} results={e} onUpdateTaskList={() => draw ? setDraw(false) : setDraw(true)}></TaskCard> : '')}
                 
             </div>

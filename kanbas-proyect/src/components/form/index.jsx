@@ -37,6 +37,11 @@ function Form(props) {
         setDate(lastDate)
         localStorage.setItem('lastUpdate', lastDate);
     }
+
+    const cancelClick = () => {
+        setBtnEnabled(false)
+        props.onCancel()
+    }
     return (
         <Fragment>
             {<form className='form_container2' onSubmit={sendTarea}>
@@ -45,7 +50,7 @@ function Form(props) {
                     {/*aca hago el condicional para poner una clase u otra al botón verde, para poner o quitar opacidad. Esto es posible gracias a la funcion 'comprobationInput' que llamo en el evento onInput del text area de la linea anterior*/}
                     {btnEnabled ? <button type='submit' className='btn btn_color'>Add</button>
                         : <button type='submit' className='btn btn_color btn_opacity'>Add</button>}
-                    <button className='btn btn_cancelar' type='reset' onClick={() => setBtnEnabled(false)}>Cancel</button>
+                    <button className='btn btn_cancelar' type='reset' onClick={cancelClick}>Cancel</button>
                 </div>
             </form>
             }
