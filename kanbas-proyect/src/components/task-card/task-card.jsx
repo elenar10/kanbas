@@ -26,7 +26,7 @@ function TaskCard(props) {
                     : <p><span className="iconChecked"> check_circle</span></p>}
 
                 <h3 className="task__name">{props.results.tarea}</h3>
-                <span className="iconDelete" onClick={handleClickDelete}>&#128465;</span>
+                <span className="iconDelete" onClick={handleClickDelete}>🗑️</span>
             </div>
             <p className="task__date">#{props.results.id} {props.results.fecha}</p>
         </div>

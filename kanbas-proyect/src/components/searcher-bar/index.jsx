@@ -1,11 +1,15 @@
 import { useContext } from 'react';
 import './style.css'
 import { DateContext } from '../contexto';
+import { FilterContext } from '../contexto/context-filter';
 
 function SearcherBar() {
     const [date] = useContext(DateContext);
+    const [filterWord, setFilterWord] = useContext(FilterContext);
     
-
+    const handleChange = (e) => {
+        setFilterWord(e.target.value)
+    }
     return (
         <div className="sub--header__container">
             <div className="version--updated__wrapper">
@@ -20,7 +24,8 @@ function SearcherBar() {
                     name="search"
                     type="text"
                     placeholder=" Encuentra una tarea"
-                    className="searchInput"></input>
+                    className="searchInput"
+                    onChange={handleChange}></input>
             </div>
         </div>
     )
