@@ -11,6 +11,7 @@
     margin-top: 1rem;
     gap: 1rem;
     padding-top: 10px;
+
 }
 .cardTask_tilte-Icons{
     display: flex;
@@ -36,5 +37,6 @@
 }
 .task__date{
     display: flex;
-    justify-content: center;
- }
+    justify-content: flex-start;
+ } 
+

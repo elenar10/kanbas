@@ -37,8 +37,25 @@ function TaskList(props) {
 
     }, [counter, draw])
 
+
+    function handleClickDeleteAll() {
+
+        for (let i = 1; i < counter; i++) {
+            const objeto = JSON.parse(localStorage.getItem(`task${i}`));
+            if (objeto !== null) {
+                if (objeto.estado === 'Done') {
+                    localStorage.removeItem(`task${i}`)
+                }
+            }
+        }
+        draw ? setDraw(false) : setDraw(true);
+    }
+
+
+
     return (
         <Fragment>
+
             <div className="taskList__container">
                 <div className="taskList__header">
                     <div className="title-counter__wrapper">
@@ -48,6 +65,7 @@ function TaskList(props) {
                     <div className="remove__container">
                         <button className="button__add" onClick={openForm}>+</button>
                         <button
+                            onClick={handleClickDeleteAll}
                             className="btn_clearAll">{props.remove}</button>
                     </div>
                 </div>
