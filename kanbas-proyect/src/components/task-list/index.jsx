@@ -45,8 +45,11 @@ function TaskList(props) {
                         <div className="counter">{task.filter(e => props.title === e.estado).length}</div>
                         <h3 className="task__title">{props.title}</h3>
                     </div>
-                    <button className="button__add" onClick={openForm}>+</button>
-                    {props.remove}
+                    <div className="remove__container">
+                        <button className="button__add" onClick={openForm}>+</button>
+                        <button
+                            className="btn_clearAll">{props.remove}</button>
+                    </div>
                 </div>
                 {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title}></Form> : ' '}
                 {task.map((e) => props.title === e.estado ? <TaskCard key={e.id} results={e} onUpdateTaskList={() => draw ? setDraw(false) : setDraw(true)}></TaskCard> : '')}
