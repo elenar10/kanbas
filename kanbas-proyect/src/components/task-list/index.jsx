@@ -29,10 +29,19 @@ function TaskList(props) {
         for (let i = 1; i < counter; i++) {
             if (JSON.parse(localStorage.getItem(`task${i}`) !== null)) {
                 arr.push(JSON.parse(localStorage.getItem(`task${i}`)))
+                console.log(arr)
             }
         }
         setTask(arr)
     }, [counter])
+
+    function toClearAll() {
+        for (let i = 1; i < counter; i++) {
+            const dataStorage = JSON.parse(localStorage.getItem(`task${i}`))
+            console.log(dataStorage)
+        }
+    }
+
 
     return (
         <Fragment>
@@ -44,7 +53,9 @@ function TaskList(props) {
                     </div>
                     <div className="remove__container">
                         <button className="button__add" onClick={openForm}>+</button>
-                        <button className="btn_clearAll">{props.remove}</button>
+                        <button
+                            onClick={toClearAll}
+                            className="btn_clearAll">{props.remove}</button>
                     </div>
                 </div>
                 {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title}></Form> : ' '}
