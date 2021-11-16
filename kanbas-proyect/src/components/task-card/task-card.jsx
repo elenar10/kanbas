@@ -6,10 +6,10 @@ function TaskCard(props) {
 
     const [date, setDate] = useContext(DateContext);
     // recuperamos del localStorage el objeto por su id
-   let resultsObjet= localStorage.getItem(`task${props.results.id}`);
-   let estadoIcons= JSON.parse(resultsObjet)
-   
-    function handleClickDelete(){
+    let resultsObjet = localStorage.getItem(`task${props.results.id}`);
+    let estadoIcons = JSON.parse(resultsObjet)
+
+    function handleClickDelete() {
         localStorage.removeItem(`task${props.results.id}`)
         props.onUpdateTaskList();
         const day = new Date();
@@ -19,7 +19,7 @@ function TaskCard(props) {
 
     }
     return (
-        <div className='cardTasK_contenedor'>
+        <div className="cardTasK_contenedor drag-box">
             <div className='cardTask_tilte-Icons'>
                 {estadoIcons?.estadoIcono === 'Pending' ?
                     <p><span className="iconInprogress">pending</span></p>

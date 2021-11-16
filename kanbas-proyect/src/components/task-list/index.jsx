@@ -1,8 +1,9 @@
-import React, { Fragment, useContext, useEffect, useState} from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import './style.css'
 import Form from '../form'
 import TaskCard from "../task-card/task-card";
 import { FilterContext } from "../contexto/context-filter";
+import Draggable from 'react-draggable';
 
 function TaskList(props) {
     const [addTask, setAddTask] = useState(false); //indica si el form se pinta o no
@@ -30,8 +31,8 @@ function TaskList(props) {
         for (let i = 1; i < counter; i++) {
             let obj = JSON.parse(localStorage.getItem(`task${i}`));
             if (obj !== null) {
-                if (typeof filterWord ===  'object' || filterWord.length<3 || obj.tarea.toLowerCase().includes(filterWord.toLowerCase()))
-                arr.push(obj)
+                if (typeof filterWord === 'object' || filterWord.length < 3 || obj.tarea.toLowerCase().includes(filterWord.toLowerCase()))
+                    arr.push(obj)
             }
         }
         setTask(arr)
@@ -68,10 +69,10 @@ function TaskList(props) {
                             className="btn_clearAll">{props.remove}</button>
                     </div>
                 </div>
-                
-                    {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title} onCancel={drawTaskList}></Form> : ' '}
-                    {task.map((e) => props.title === e.estado ? <TaskCard key={e.id} results={e} onUpdateTaskList={() => draw ? setDraw(false) : setDraw(true)}></TaskCard> : '')}
-                
+
+                {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title} onCancel={drawTaskList}></Form> : ' '}
+                {task.map((e) => props.title === e.estado ? <TaskCard key={e.id} results={e} onUpdateTaskList={() => draw ? setDraw(false) : setDraw(true)}></TaskCard> : '')}
+
             </div>
         </Fragment>
     )
