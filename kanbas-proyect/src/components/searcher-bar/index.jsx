@@ -6,14 +6,14 @@ import { FilterContext } from '../contexto/context-filter';
 function SearcherBar() {
     const [date] = useContext(DateContext);
     const [filterWord, setFilterWord] = useContext(FilterContext);
-    
+
     const handleChange = (e) => {
         setFilterWord(e.target.value)
     }
     return (
         <div className="sub--header__container">
             <div className="version--updated__wrapper">
-                <p>Version 1.0.0</p>
+                <p className="version">Version 1.0.0</p>
                 <p>{date}</p>
 
             </div>

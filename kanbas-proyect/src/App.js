@@ -9,7 +9,6 @@ import { DateContext } from './components/contexto';
 import { useContext } from 'react';
 import { FilterContext } from './components/contexto/context-filter';
 
-
 function App() {
   const [date, setDate] = useContext(DateContext);
   const [filterWord, setFilterWord] = useContext(FilterContext);
@@ -17,15 +16,15 @@ function App() {
   return (
     <Fragment>
       <FilterProvider value={[filterWord, setFilterWord]}>
-        <DateProvider value={[date, setDate]}>
-          <Header></Header>
-          <div className="main__container">
-            <SearcherBar></SearcherBar>
-            <TaskList title="To do"></TaskList>
-            <TaskList title="In progress"></TaskList>
-            <TaskList title="Done" remove="Clear All"></TaskList>
-          </div>
-        </DateProvider>
+      <DateProvider value={[date, setDate]}>
+        <Header></Header>
+        <div className="main__container">
+          <SearcherBar></SearcherBar>
+          <TaskList title="To do"></TaskList>
+          <TaskList title="In progress"></TaskList>
+          <TaskList title="Done" remove="Clear All"></TaskList>
+        </div>
+      </DateProvider>
       </FilterProvider>
     </Fragment>
   );

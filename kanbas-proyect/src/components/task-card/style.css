@@ -1,4 +1,4 @@
-.cardTasK_contenedor{
+/* .cardTasK_contenedor{
     width: 100%;
     background-color: white;
     border: rgba(27,31,35,0.15) solid 1px;
@@ -7,12 +7,11 @@
     display: flex;
     flex-direction: column;
     align-items: space-between;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica , sans-serif, 'Apple Color Emoji', 'Segoe UI Symbol';
     margin-top: 1rem;
     gap: 1rem;
     padding-top: 10px;
-
 }
+
 .cardTask_tilte-Icons{
     display: flex;
     justify-content: space-between;
@@ -39,4 +38,55 @@
     display: flex;
     justify-content: flex-start;
  } 
+ */
 
+.cardTasK_contenedor {
+     /* width: 100%; */
+    background-color: white;
+    border: rgba(27,31,35,0.15) solid 1px;
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 0.5rem;
+    margin-top: 0.8rem;
+ }
+
+.cardTask_tilte-Icons{
+    display: flex;
+    justify-content: flex-start;
+}
+.iconDelete {
+    font-family: 'Apple Color Emoji';
+    font-size: 1.5em;
+    color: black;
+}
+.task__name{
+    color: #0366D6;
+}
+.iconInprogress{
+    font-family: 'Material Icons';
+    font-size: 1.5em;
+    color: #22863A;
+}
+.iconChecked{
+    font-family: 'Material Icons';
+    font-size:1.5em;
+    color: #CB2431;
+}
+.task__date{
+    display: flex;
+    justify-content: flex-start;
+ } 
+
+.tittle--date__wrapper{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: stretch;
+
+}
