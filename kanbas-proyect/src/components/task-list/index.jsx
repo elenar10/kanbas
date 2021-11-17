@@ -71,9 +71,9 @@ function TaskList(props) {
                 </div>
 
                 {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title} onCancel={drawTaskList}></Form> : ' '}
-                <Draggable axis="x">
-                    {task.map((e) => props.title === e.estado ? <TaskCard key={e.id} results={e} onUpdateTaskList={() => draw ? setDraw(false) : setDraw(true)}></TaskCard> : '')}
-                </Draggable>
+
+                {task.map((e) => props.title === e.estado ? <TaskCard key={e.id} results={e} onUpdateTaskList={() => draw ? setDraw(false) : setDraw(true)}></TaskCard> : '')}
+
             </div>
         </Fragment>
     )
