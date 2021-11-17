@@ -2,10 +2,11 @@
 /* HEADER */
 .App-logo {
   width: 3rem;
-    }
+  padding-left: 0.5rem;
+}
     
 .App-header {
-   width: 100%;
+  width: 100vw;
   background-color: #24292e;  
   min-height: 1rem;
   display: inline-flex;

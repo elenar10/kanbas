@@ -1,19 +1,20 @@
 /* GENERAL RESETS */
 *{
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 /* BODY */
 body{
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color
   Emoji,Segoe UI Emoji;
+  width: 100vw;
+  height: 100vh;
 }
 
 /* MAIN CONTAINER - TASKS CONTAINER */
 
 .main__container{
-  min-height: 42rem;
   width: 100%;
   display: flex;
   flex-direction: row;
