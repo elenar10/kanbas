@@ -3,6 +3,7 @@ import './style.css'
 import Form from '../form'
 import TaskCard from "../task-card/task-card";
 import { FilterContext } from "../contexto/context-filter";
+// import Draggable from 'react-draggable';
 
 function TaskList(props) {
     const [addTask, setAddTask] = useState(false); //indica si el form se pinta o no
@@ -70,6 +71,7 @@ function TaskList(props) {
                 </div>
 
                 {addTask ? <Form onUpdateTaskList={drawTaskList} titleTask={props.title} onCancel={drawTaskList}></Form> : ' '}
+
                 {task.map((e) => props.title === e.estado ? <TaskCard key={e.id} results={e} onUpdateTaskList={() => draw ? setDraw(false) : setDraw(true)}></TaskCard> : '')}
 
             </div>

@@ -1,6 +1,8 @@
 import './style.css'
 import { useContext } from 'react';
 import { DateContext } from '../contexto';
+import Draggable from 'react-draggable';
+// import Draggable from 'react-draggable';
 
 function TaskCard(props) {
 
@@ -18,7 +20,7 @@ function TaskCard(props) {
         localStorage.setItem('lastUpdate', lastDate);
     }
     return (
-        <div className='cardTasK_contenedor'>
+        <div className="cardTasK_contenedor drag-box">
             <div className='cardTask_tilte-Icons'>
                 {estadoIcons?.estadoIcono === 'Pending' ?
                     <span className="iconInprogress">pending</span>
@@ -29,9 +31,7 @@ function TaskCard(props) {
                 <p className="task__date">#{props.results.id} created on {props.results.fecha}</p>
             </div>
             <span className="iconDelete" onClick={handleClickDelete}>🗑️</span>
-
-
-        </div>
+        </div >
     )
 }
 export default TaskCard;
