@@ -1,7 +1,7 @@
 import './style.css'
 import { useContext } from 'react';
 import { DateContext } from '../contexto';
-// import Draggable from 'react-draggable';
+
 
 function TaskCard(props) {
 
