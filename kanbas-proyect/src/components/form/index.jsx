@@ -45,7 +45,7 @@ function Form(props) {
     return (
         <Fragment>
             {<form className='form_container2' onSubmit={sendTarea}>
-                <textarea name="task" id="task" cols="28" rows="3" placeholder='Enter a note' maxLength='80' required className='text_tarea' onInput={comprobationInput}></textarea>
+                <textarea name="task" id="task" cols="28" rows="3" placeholder='Enter a note' maxLength='80' required className='text_tarea' onInput={comprobationInput} autoFocus></textarea>
                 <div className='btn_container'>
                     {/*aca hago el condicional para poner una clase u otra al botón verde, para poner o quitar opacidad. Esto es posible gracias a la funcion 'comprobationInput' que llamo en el evento onInput del text area de la linea anterior*/}
                     {btnEnabled ? <button type='submit' className='btn btn_color'>Add</button>
