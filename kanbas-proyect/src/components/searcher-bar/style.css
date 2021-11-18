@@ -1,31 +1,106 @@
-.sub--header__container{
+/* CENTRAR PLACEHOLDER */
+::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 0.8rem;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
+
+ /* Contenedor version y searcher */
+ .sub--header__container {
     width: 100vw;
-    display: inline-flex;
-    flex-direction: row;
+    display:flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    gap: 0.5rem;
     justify-content: space-between;
     align-items: center;
 }
 .version--updated__wrapper{
-    width: 50%;
-    font-size: 0.8rem;
-    padding-left: 0.3rem;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    width: 100%;
+    font-size: 0.5rem;
     color: #24292e80;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
 }
-.search__container{
-    width: 50%;
-    height: 80%;
+.search__container {
+    width: 100%;
+    height: 3rem;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
+
 .searchInput{
-    width: 60%;
+    width: 95%;
     border-radius: 0.3rem;
     border: lightgray 0.6px solid;
 }
 .version{
     font-weight: bold;
+}
+
+
+@media (min-width: 800px) {
+/* version-updated contenedor */
+.sub--header__container {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.version--updated__wrapper {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+    color: #24292e80;
+    align-content: flex-start;
+    align-items: flex-start;
+    gap: 0.2rem;
+}
+.search__container {
+    width: 55%;
+    justify-content: flex-end;
+}
+
+.searchInput{
+    width: 94%;
+}
+/* CENTRAR PLACEHOLDER */
+::-webkit-input-placeholder {
+    text-align: center;
+    font-size:  0.8rem;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+    font-size:  0.8rem;
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+    font-size:  0.8rem;
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+    font-size: 0.8rem;
+ }
+
 }

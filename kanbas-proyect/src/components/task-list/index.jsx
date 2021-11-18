@@ -3,7 +3,6 @@ import './style.css'
 import Form from '../form'
 import TaskCard from "../task-card/task-card";
 import { FilterContext } from "../contexto/context-filter";
-// import Draggable from 'react-draggable';
 
 function TaskList(props) {
     const [addTask, setAddTask] = useState(false); //indica si el form se pinta o no
@@ -16,6 +15,7 @@ function TaskList(props) {
 
     // función que cambia una variable de estado, para que al hacer click en el'+' para abrir el formulario, se actualice, haga render otra vez, y abra el formulario
     function openForm() {
+
         addTask === true ? setAddTask(false) : setAddTask(true)
     }
 

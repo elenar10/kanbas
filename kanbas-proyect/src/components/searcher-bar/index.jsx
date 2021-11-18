@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import './style.css'
 import { DateContext } from '../contexto';
 import { FilterContext } from '../contexto/context-filter';
+import { version } from '../../../package.json'
 
 function SearcherBar() {
     const [date] = useContext(DateContext);
@@ -13,7 +14,7 @@ function SearcherBar() {
     return (
         <div className="sub--header__container">
             <div className="version--updated__wrapper">
-                <p className="version">Version 1.0.0</p>
+                <p className="version">Version {version}</p>
                 <p>{date}</p>
 
             </div>
