@@ -33,7 +33,7 @@ function Form(props) {
         counter++;
         localStorage.setItem('counter', counter);
         props.onUpdateTaskList();
-        const lastDate = `Updated on ${day.getDate()}-${day.getMonth() + 1} ${day.getSeconds()}`
+        const lastDate = `Updated on ${day.getDate()}-${day.getMonth() + 1} ${day.getHours()}:${day.getMinutes()}`
         setDate(lastDate)
         localStorage.setItem('lastUpdate', lastDate);
     }
