@@ -4,7 +4,6 @@ import Form from '../form'
 import TaskCard from "../task-card/task-card";
 import { FilterContext } from "../contexto/context-filter";
 
-
 function TaskList(props) {
     const [addTask, setAddTask] = useState(false); //indica si el form se pinta o no
     const [task, setTask] = useState([]);     //Es el array con las tareas de la localStorage
