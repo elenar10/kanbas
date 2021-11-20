@@ -13,6 +13,9 @@
     overflow-y: auto;
     gap: 0.1rem;
     margin-top: 0.5rem;
+    box-shadow: 10px 10px 21px -14px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 10px 10px 21px -14px rgba(0,0,0,0.35);
+    -moz-box-shadow: 10px 10px 21px -14px rgba(0,0,0,0.35);
 }
 
 /* HEADER (counter-title-button */
@@ -93,7 +96,6 @@
     
     .task__title{
         font-size: 1rem;
-
     }
     }
 
