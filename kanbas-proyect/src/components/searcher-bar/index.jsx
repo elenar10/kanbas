@@ -24,7 +24,7 @@ function SearcherBar() {
                     id="search"
                     name="search"
                     type="text"
-                    placeholder=" Encuentra una tarea"
+                    placeholder="🔎 Encuentra una tarea"
                     className="searchInput"
                     onChange={handleChange}></input>
             </div>

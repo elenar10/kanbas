@@ -9,13 +9,16 @@
     padding: 0.8rem;
     font-size: 0.8rem;
     color: rgba(27, 31, 35, 0.479);
-    overflow-x: hidden;
-    overflow-y: auto;
     gap: 0.1rem;
     margin-top: 0.5rem;
     box-shadow: 10px 10px 21px -14px rgba(0,0,0,0.35);
     -webkit-box-shadow: 10px 10px 21px -14px rgba(0,0,0,0.35);
     -moz-box-shadow: 10px 10px 21px -14px rgba(0,0,0,0.35);
+}
+
+.overflow {
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 /* HEADER (counter-title-button */
@@ -90,12 +93,16 @@
         width: 30%;
         height: 70vh;
         color: rgba(27, 31, 35, 0.479);
-        overflow-x: hidden;
-        overflow-y: auto;
+        /* overflow-x: hidden;
+        overflow-y: auto; */
     }
     
     .task__title{
         font-size: 1rem;
+    }
+    .overflow {
+        overflow-x: hidden;
+        overflow-y: auto;
     }
     }
 

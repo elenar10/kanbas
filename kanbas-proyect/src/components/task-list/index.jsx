@@ -56,7 +56,7 @@ function TaskList(props) {
     return (
         <Fragment>
 
-            <div className="taskList__container">
+            <div className="taskList__container overflow">
                 <div className="taskList__header">
                     <div className="title-counter__wrapper">
                         <div className="counter">{task.filter(e => props.title === e.estado).length}</div>
