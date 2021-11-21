@@ -32,10 +32,10 @@ function Form(props) {
         localStorage.setItem(`task${counter}`, JSON.stringify(objectTask));
         counter++;
         localStorage.setItem('counter', counter);
-        props.onUpdateTaskList();
-        const lastDate = `Updated on ${day.getDate()}-${day.getMonth() + 1} ${day.getHours()}:${day.getMinutes()}`
-        setDate(lastDate)
+        const lastDate = `Updated on ${day.getDate()}-${day.getMonth() + 1} ${day.getSeconds()}`
         localStorage.setItem('lastUpdate', lastDate);
+        setDate(lastDate)
+        props.onUpdateTaskList(lastDate);
     }
 
     const cancelClick = () => {
