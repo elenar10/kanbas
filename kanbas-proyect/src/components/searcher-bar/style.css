@@ -105,3 +105,9 @@
  }
 
 }
+@media (min-width: 800px) {
+    .search__container {
+        width: 32%;
+        justify-content: flex-end;
+    }
+}
